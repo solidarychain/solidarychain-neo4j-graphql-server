@@ -1,0 +1,12 @@
+Project:
+  ☐ @critical run Neo4jFullstackGraphQLApplicationsWithReactNodejsAndNeo4jBook/code/chapter7/api
+  ☐ get fies from TypescriptNodeNeo4jGraphqlLibraryStarter
+    ☐ connect to neo4j
+    ☐ codegen types
+  ☐ get 
+    /home/mario/Development/Neo4j/Neo4jFullstackGraphQLApplicationsWithReactNodejsAndNeo4jBook/code/chapter7/api/index.js
+    const {
+      Neo4jGraphQLAuthJWKSPlugin,
+    } = require("@neo4j/graphql-plugin-auth");
+  ☐ custom operations
+  ☐ minimal query, mutation, subscription
