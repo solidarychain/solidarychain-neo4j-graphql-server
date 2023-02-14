@@ -1,10 +1,6 @@
-import {
-  createYoga,
-  Plugin,
-  createSchema,
-  createGraphQLError,
-} from 'graphql-yoga'
+import { createGraphQLError, createSchema, createYoga, Plugin } from 'graphql-yoga'
 import { YOGA_DISABLE_SUBSCRIPTION } from './app'
+import { typeDefs } from './gql'
 
 // available when handling requests, needs to be provided by the implementor
 // eslint-disable-next-line @typescript-eslint/ban-types
@@ -20,14 +16,16 @@ export const yoga = createYoga<ServerContext, UserContext>({
     disableSubscription: YOGA_DISABLE_SUBSCRIPTION,
   },
   schema: createSchema({
-    typeDefs: /* GraphQL */ `
-      type Query {
-        greetings: String!
-      }
-      type Subscription {
-        greetings: String!
-      }
-    `,
+    // TODO:
+    // typeDefs: /* GraphQL */ `
+    //   type Query {
+    //     greetings: String!
+    //   }
+    //   type Subscription {
+    //     greetings: String!
+    //   }
+    // `
+    typeDefs,
     resolvers: {
       Query: {
         greetings: () =>

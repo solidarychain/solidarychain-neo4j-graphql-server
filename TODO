@@ -1,5 +1,6 @@
 Project:
   ☐ @critical run Neo4jFullstackGraphQLApplicationsWithReactNodejsAndNeo4jBook/code/chapter7/api
+  @neo4j/graphql-plugin-auth
   ☐ get fies from TypescriptNodeNeo4jGraphqlLibraryStarter
     ☐ connect to neo4j
     ☐ codegen types
@@ -10,3 +11,6 @@ Project:
     } = require("@neo4j/graphql-plugin-auth");
   ☐ custom operations
   ☐ minimal query, mutation, subscription
+  ☐ tooling
+    ☐ eslint
+    ☐ prettier
