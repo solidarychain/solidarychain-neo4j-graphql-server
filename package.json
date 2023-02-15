@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@neo4j/graphql": "^3.16.1",
+    "@neo4j/graphql-ogm": "^3.16.1",
     "@neo4j/graphql-plugin-auth": "^2.1.0",
     "dotenv": "^16.0.3",
     "graphql": "16.6.0",

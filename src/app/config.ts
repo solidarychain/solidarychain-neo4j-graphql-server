@@ -14,4 +14,5 @@ export const NEO4J_ENCRYPTION: string = process.env.NEO4J_ENCRYPTION || 'ENCRYPT
 export const NEO4J_GRAPHQL_JWT_SECRET: string = process.env.NEO4J_GRAPHQL_JWT_SECRET || 'secret';
 export const HTTPS_SERVER_CERT: string = process.env.HTTPS_SERVER_CERT || 'server.crt';
 export const HTTPS_SERVER_KEY: string = process.env.HTTPS_SERVER_KEY || 'server.key';
-export const YOGA_DISABLE_SUBSCRIPTION = process.env.YOGA_DISABLE_SUBSCRIPTION === 'true' ? true : false;
+// export const YOGA_DISABLE_SUBSCRIPTION = process.env.YOGA_DISABLE_SUBSCRIPTION === 'true' ? true : false;
+export const AUTH_JWKS_ENDPOINT = process.env.JWKS_ENDPOINT || 'https://kuartzo.com:444/.well-known/jwks.json';

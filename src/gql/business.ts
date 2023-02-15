@@ -23,4 +23,12 @@ export const typeDefs = /* GraphQL */`
     reviews: [Review!]! @relationship(type: "REVIEWS", direction: IN)
     categories: [Category!]! @relationship(type: "IN_CATEGORY", direction: OUT)
   }
+
+  extend type Business
+    @auth(
+      rules: [
+        { operations: [READ], where: { userId: "$jwt.sub" } }
+        { operations: [CREATE, UPDATE, DELETE], roles: ["admin"] }
+      ]
+    )
 `;
