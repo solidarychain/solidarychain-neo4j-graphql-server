@@ -1,4 +1,8 @@
 export const typeDefs = /* GraphQL */`
+  # custom resolvers
+  # type Query {
+  # }
+
   type Review {
     reviewId: ID! @id
     stars: Float!

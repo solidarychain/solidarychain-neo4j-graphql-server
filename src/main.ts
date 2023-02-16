@@ -16,8 +16,17 @@ const neoSchema = new Neo4jGraphQL({
     subscriptions: new Neo4jGraphQLSubscriptionsSingleInstancePlugin(),
     auth: new Neo4jGraphQLAuthJWKSPlugin({
       jwksEndpoint: AUTH_JWKS_ENDPOINT,
-    }),  
+      // Use the Neo4jGraphQL config option rolesPath to specify a object path for JWT roles otherwise defaults to jwt.roles
+      // https://neo4j.com/docs/graphql-manual/current/auth/authorization/roles/
+      // check consent app
+      // TODO: add env var
+      rolesPath: 'scope.profile.roles'
+    }),
   },
+  config: {
+    // TODO: add env var
+    enableDebug: false,
+  }
 });
 
 export const ogm = new OGM({
@@ -31,7 +40,7 @@ type ServerContext = {
   driver: Driver,
 }
 // available in GraphQL, during execution/subscription
-interface UserContext {}
+interface UserContext { }
 
 // Generates graphql schema and resolvers, connect to neo4j
 neoSchema.getSchema().then(async (schema) => {
