@@ -9,5 +9,5 @@ export const typeDefs = [
   Business.typeDefs,
   Category.typeDefs,
   Review.typeDefs,
-  User.typeDefs,
+  User.typeDefs
 ];

@@ -1,4 +1,4 @@
-export const typeDefs = /* GraphQL */`
+export const typeDefs = /* GraphQL */ `
   # custom resolvers
   type Query {
     fuzzyBusinessByName(searchString: String): [Business]
@@ -15,17 +15,15 @@ export const typeDefs = /* GraphQL */`
     waitTime: Int! @computed
     averageStars: Float!
       @auth(rules: [{ isAuthenticated: true }])
-      @cypher(
-        statement: "MATCH (this)<-[:REVIEWS]-(r:Review) RETURN avg(r.stars)"
-      )
+      @cypher(statement: "MATCH (this)<-[:REVIEWS]-(r:Review) RETURN avg(r.stars)")
     recommended(first: Int = 1): [Business!]!
-    @cypher(
-      statement: """
-      MATCH (this)<-[:REVIEWS]-(:Review)<-[:WROTE]-(:User)-[:WROTE]->(:Review)-[:REVIEWS]->(rec:Business)
-      WITH rec, COUNT(*) AS score
-      RETURN rec ORDER BY score DESC LIMIT $first
-      """
-    )
+      @cypher(
+        statement: """
+        MATCH (this)<-[:REVIEWS]-(:Review)<-[:WROTE]-(:User)-[:WROTE]->(:Review)-[:REVIEWS]->(rec:Business)
+        WITH rec, COUNT(*) AS score
+        RETURN rec ORDER BY score DESC LIMIT $first
+        """
+      )
     name: String!
     city: String!
     state: String!

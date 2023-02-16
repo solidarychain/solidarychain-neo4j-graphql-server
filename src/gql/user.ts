@@ -1,4 +1,4 @@
-export const typeDefs = /* GraphQL */`
+export const typeDefs = /* GraphQL */ `
   # custom resolvers
   # type Query {
   # }

@@ -44,7 +44,7 @@ $ code .prettierrc
 ```
 
 ```shell
-$ pnpm add -D eslint-config-prettier eslint-plugin-prettier
+$ pnpm add -D eslint eslint-config-prettier eslint-plugin-prettier
 $ code .eslintrc
 ```
 

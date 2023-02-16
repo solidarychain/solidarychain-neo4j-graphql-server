@@ -1,4 +1,4 @@
-export const typeDefs = /* GraphQL */`
+export const typeDefs = /* GraphQL */ `
   # custom resolvers
   # type Query {
   # }
@@ -12,13 +12,5 @@ export const typeDefs = /* GraphQL */`
     business: Business! @relationship(type: "REVIEWS", direction: OUT)
   }
 
-  extend type Review
-    @auth(
-      rules: [
-        {
-          operations: [CREATE, UPDATE]
-          bind: { user: { userId: "$jwt.sub" } }
-        }
-      ]
-    )
+  extend type Review @auth(rules: [{ operations: [CREATE, UPDATE], bind: { user: { userId: "$jwt.sub" } } }])
 `;
