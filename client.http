@@ -9,40 +9,7 @@
 @requestType = GraphQL
 // @authToken = {{SignInMutation.response.body.$.data.signIn}}
 // kuartzo jwt with rolesPath: 'scope.profile.roles'
-@authToken = eyJhbGciOiJSUzI1NiIsImtpZCI6InB1YmxpYzpoeWRyYS5vcGVuaWQuaWQtdG9rZW4iLCJ0eXAiOiJKV1QifQ.eyJhY3IiOiIwIiwiYXRfaGFzaCI6Ik1NeFAyWGNaLVlnUWVzX1ZpWDVZQWciLCJhdWQiOlsib2F1dGgtcGtjZTUiXSwiYXV0aF90aW1lIjoxNjc2NTA3NTkyLCJleHAiOjE2NzY1OTQ5NTMsImlhdCI6MTY3NjU5MTM1MywiaXNzIjoiaHR0cHM6Ly9rdWFydHpvLmNvbTo0NDQvIiwianRpIjoiYWM0OGIwMDUtMGExMS00MTQyLWIxYzItNjY3OTJkYTI2YTJhIiwicmF0IjoxNjc2NTA3NTg4LCJzY29wZSI6eyJhZGRyZXNzIjp7fSwiZW1haWwiOnt9LCJwaG9uZSI6e30sInByb2ZpbGUiOnsiY2l2aWxpYW5JZE51bWJlciI6IjA5ODc5NDYyMCIsImNvdW50cnkiOiJQUlQiLCJkYXRlT2ZCaXJ0aCI6IjE5NzEtMTItMTkiLCJkb2N1bWVudE51bWJlciI6IjA5ODc5NDYyIDAgWlozIiwiZG9jdW1lbnRUeXBlIjoiQ2FydMOjbyBkZSBDaWRhZMOjbyIsImdlbmRlciI6Ik0iLCJnaXZlbk5hbWUiOiJNw6FyaW8gQWxiZXJ0byIsImdpdmVuTmFtZUZhdGhlciI6IkFsYmVydG8iLCJnaXZlbk5hbWVNb3RoZXIiOiJNYXJpYSBEYSBHcmHDp2EgRGUgT2xpdmVpcmEgTWVuZGVzIiwiaGVhbHRoTnVtYmVyIjoiMjg1MTkxNjU5IiwiaGVpZ2h0IjoiMSw4MSIsImlzc3VpbmdFbnRpdHkiOiJSZXDDumJsaWNhIFBvcnR1Z3Vlc2EiLCJsb2NhbE9mUmVxdWVzdCI6IkNSQ2l2LiBGaWd1ZWlyYSBkYSBGb3oiLCJuYXRpb25hbGl0eSI6IlBSVCIsInBhcmVudHMiOiJBbGJlcnRvIERlIEFuZHJhZGUgTW9udGVpcm8gKiBNYXJpYSBEYSBHcmHDp2EgRGUgT2xpdmVpcmEgTWVuZGVzIE1vbnRlaXJvIiwicm9sZXMiOlsiYWRtaW4iLCJ1c2VyIl0sInNvY2lhbFNlY3VyaXR5TnVtYmVyIjoiMTExMDM0NzgyNDIiLCJ0YXhObyI6IjE4MjY5MjEyNCIsInZhbGlkaXR5QmVnaW5EYXRlIjoiMjAxOC0wNS0wOCIsInZhbGlkaXR5RW5kRGF0ZSI6IjIwMjgtMDUtMDgifX0sInNpZCI6IjRiNmJhZjkyLTU2ZmMtNDA4Yy05ZDc5LThkMWNhMDA2ZDNhMiIsInN1YiI6IjE4MjY5MjEyNCJ9.pgDn_as-Cnj_ji8gwYNtjMoff_0FzsGAH-Bv55BDdCn2IEIg-dCLSmiraob6zBOco3kM2RQpNX2UeOvggSTpxJeJr1ovc6_YWLTuyEffT91reAvHrnjIsKmVeTS_-wXcnlaC1K92RZ3PoJPnJ5MAMZkPAybFNiw0YWKbtTzNgnQ9cCxp9bCqnzTXKzEaEeCHHoAYsVk_T9ezVjRG8lfpXCqLxYgiooW1kZGQ-h83EOcvTp-USJBbiGoO5TC5JDIae9pep2dGQXrdq73cjDTjCVjjj7HZbSMOL7zo61JsQeOoeniJCew3lN7dfPB9bNxZIOf3BTNUfbMbg57IdMAd-PuYNf-18xVxNTMbwouufXlplOy4BlLbIvdYSNPkMcY2ajgSIEvhfkylhzoayqtuf62-nH8SPhy7Tg_Qgies1uvZ5GJmjharj9DsiuEg7i0ZPR6k1AyqLObV8ApIbQkds5My87k-phmMd3dbEZ1wPN0577K1262VvnQ_kDyPDvVZKI27N5ENcs-tAWd7jPzNv-BpVSGxh2CFFNB5s-Dxc6Q24nLy8Sz915EbE4Q17sTRITW4PjAqMRWLgiWzZNlrCOoPRx74qagt8b6FelKxZxmvaZMvXMY0UCicwad8EkOG0IONpTURtKSFOw1RoilvAVmzfZMq0rd5XFTLv_NygWk
-
-### mutationCreateBusinesses
-// @name mutationCreateBusinesses
-
-POST {{gqlUri}} HTTP/1.1
-Content-Type: {{contentType}}
-X-REQUEST-TYPE: {{requestType}}
-Authorization: Bearer {{authToken}}
-
-mutation createBusinesses($businessCreateInput: [BusinessCreateInput!]!){
-  createBusinesses(input: $businessCreateInput) {
-    businesses{
-      name
-    }
-  }
-}
-
-{
-  "businessCreateInput": [
-    {
-      "businessId": "links",
-      "name": "Links",
-      "address": "R.Dr.Jose Luis Mendes Pinheiro, No 5",
-      "city": "Figueira da Foz",
-      "state": "Coimbra",
-      "location": {
-        "longitude": 28.00,
-        "latitude": 14.00,
-        "height": 7
-      }
-    }
-  ]
-}
+@authToken = eyJhbGciOiJSUzI1NiIsImtpZCI6InB1YmxpYzpoeWRyYS5vcGVuaWQuaWQtdG9rZW4iLCJ0eXAiOiJKV1QifQ.eyJhY3IiOiIwIiwiYXRfaGFzaCI6IjA4MDRJbzd1dU9WTzZMand2R1ljYmciLCJhdWQiOlsib2F1dGgtcGtjZTUiXSwiYXV0aF90aW1lIjoxNjc2NjcxMDUwLCJleHAiOjE2NzY2NzQ2NTcsImlhdCI6MTY3NjY3MTA1NywiaXNzIjoiaHR0cHM6Ly9rdWFydHpvLmNvbTo0NDQvIiwianRpIjoiYTM0MWZmYzMtNTFlNC00ZTM3LWFiYTktY2RkZDUwZWEwYzYxIiwicmF0IjoxNjc2NjcxMDQ0LCJzY29wZSI6eyJhZGRyZXNzIjp7fSwiZW1haWwiOnt9LCJwaG9uZSI6e30sInByb2ZpbGUiOnsiY2l2aWxpYW5JZE51bWJlciI6IjA5ODc5NDYyMCIsImNvdW50cnkiOiJQUlQiLCJkYXRlT2ZCaXJ0aCI6IjE5NzEtMTItMTkiLCJkb2N1bWVudE51bWJlciI6IjA5ODc5NDYyIDAgWlozIiwiZG9jdW1lbnRUeXBlIjoiQ2FydMOjbyBkZSBDaWRhZMOjbyIsImdlbmRlciI6Ik0iLCJnaXZlbk5hbWUiOiJNw6FyaW8gQWxiZXJ0byIsImdpdmVuTmFtZUZhdGhlciI6IkFsYmVydG8iLCJnaXZlbk5hbWVNb3RoZXIiOiJNYXJpYSBEYSBHcmHDp2EgRGUgT2xpdmVpcmEgTWVuZGVzIiwiaGVhbHRoTnVtYmVyIjoiMjg1MTkxNjU5IiwiaGVpZ2h0IjoiMSw4MSIsImlzc3VpbmdFbnRpdHkiOiJSZXDDumJsaWNhIFBvcnR1Z3Vlc2EiLCJsb2NhbE9mUmVxdWVzdCI6IkNSQ2l2LiBGaWd1ZWlyYSBkYSBGb3oiLCJuYXRpb25hbGl0eSI6IlBSVCIsInBhcmVudHMiOiJBbGJlcnRvIERlIEFuZHJhZGUgTW9udGVpcm8gKiBNYXJpYSBEYSBHcmHDp2EgRGUgT2xpdmVpcmEgTWVuZGVzIE1vbnRlaXJvIiwicm9sZXMiOlsiYWRtaW4iLCJ1c2VyIl0sInNvY2lhbFNlY3VyaXR5TnVtYmVyIjoiMTExMDM0NzgyNDIiLCJ0YXhObyI6IjE4MjY5MjEyNCIsInZhbGlkaXR5QmVnaW5EYXRlIjoiMjAxOC0wNS0wOCIsInZhbGlkaXR5RW5kRGF0ZSI6IjIwMjgtMDUtMDgifX0sInNpZCI6IjA1YzU3ZDIzLWQ0MzEtNGM0ZC1hZjY4LTRhYjk5ZmVlMTQ4ZSIsInN1YiI6IjE4MjY5MjEyNCJ9.N01Dd3VhjVNMOrw1a7VZpAMeecSk3bD4-dw4tvkP-5_v0udUnxRXwYXaxMhd6BTrnAIC3tWds4IvI8ntgHd-14J8R1-TuJSC_oOGpaHfzP92wxYCVhWMHNets_pqnJCsRqYr3j8G6AZKTay6wqfUdC_9NZoOfA4NU6b6O_BJE0mg4sIDw3NJtycR9uKwdjYg-aivN-EsUlN3fmZxbUsjQy1Q8VrDQr6kFDZ2CbkfhVYmxZmLv5GtjCD_B8SMX6nSD5W9mGJU_BTKhYCHGSgqW4wz0pBUQuVTid3pYpQyyvSrIFapKhJLhEYVroCg36sXYJ8Krvuo2VCiQtR1LfsSHoDv1OO2eniNF0x5s3r9VOS2SiP6dPb4gIdQ4g-O2Of_OyxTx_7-FpYUuOqukTwzD8Pir7KAutC-zVMkObTL5hCtNGw-thtjnKBh5EozLvqCtSB-8QcXJBV20yuBYIh1Udr-QRM-gmUZDn4v8iYtfSzGlZm_oodTgg-YzZ0N6zUCD4PlBHjim6izzFOrl-81dla-bT-rHSnvSLsi9Lk3NmLVDW6_94NlcpuCS4uHu9Vsz3u0O40_AX9WVTuP00yyKJ6O6S8QJO99fZJ8jT1cSJmInwJfsLK0yzrcpwMjdrU8XwMUXoLiZt8kHiEi6O_nEvocCX9eeI-0urC-FaHDSqw
 
 ### queryBusiness
 // @name queryBusiness
@@ -131,6 +98,100 @@ query fuzzyBusinessByName($searchString: String){
   fuzzyBusinessByName(searchString:$searchString){
     businessId
     name
+  }
+}
+
+### mutationCreateBusinesses
+// @name mutationCreateBusinesses
+
+POST {{gqlUri}} HTTP/1.1
+Content-Type: {{contentType}}
+X-REQUEST-TYPE: {{requestType}}
+Authorization: Bearer {{authToken}}
+
+mutation createBusinesses($businessCreateInput: [BusinessCreateInput!]!){
+  createBusinesses(input: $businessCreateInput) {
+    businesses{
+      businessId
+      name
+    }
+  }
+}
+
+{
+  "businessCreateInput": [
+    {
+      "businessId": "links",
+      "name": "Links",
+      "address": "R.Dr.Jose Luis Mendes Pinheiro, No 5",
+      "city": "Figueira da Foz",
+      "state": "Coimbra",
+      "location": {
+        "longitude": 28.00,
+        "latitude": 14.00,
+        "height": 7
+      }
+    }
+  ]
+}
+
+### mutationUpdateBusinesses
+// @name mutationUpdateBusinesses
+
+POST {{gqlUri}} HTTP/1.1
+Content-Type: {{contentType}}
+X-REQUEST-TYPE: {{requestType}}
+Authorization: Bearer {{authToken}}
+
+mutation updateBusinesses(
+  $businessWhere: BusinessWhere,
+  $businessUpdateInput: BusinessUpdateInput,
+){
+  updateBusinesses(
+    where: $businessWhere,
+    update: $businessUpdateInput
+  ) {
+    businesses{
+      businessId
+      name
+    }
+  }
+}
+
+{
+  "businessWhere": {
+    "businessId": "links"
+  },
+  "businessUpdateInput": {
+      "name": "Critical-Links"
+  }
+}
+
+### mutationUpdateBusinesses
+// @name mutationUpdateBusinesses
+
+POST {{gqlUri}} HTTP/1.1
+Content-Type: {{contentType}}
+X-REQUEST-TYPE: {{requestType}}
+Authorization: Bearer {{authToken}}
+
+mutation deleteBusinesses(
+  $businessWhere: BusinessWhere,
+  $businessDeleteInput: BusinessDeleteInput  
+){
+  deleteBusinesses(
+    where: $businessWhere,
+    delete: $businessDeleteInput
+  ){
+    bookmark
+    nodesDeleted
+    relationshipsDeleted
+  }
+}
+
+{
+  "businessWhere": {
+    "businessId": "links"
   }
 }
 

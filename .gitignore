@@ -130,3 +130,4 @@ dist
 .pnp.*
 
 .bak
+volumes/neo4j/data

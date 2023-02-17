@@ -1,17 +1,17 @@
 version: '3'
 
 services:
-  # caddy:
-  #   image: caddy:2.4.3
-  #   restart: unless-stopped
-  #   ports:
-  #     - "443:443"
-  #   environment:
-  #     - /etc/localtime:/etc/localtime:ro
-  #   volumes:
-  #     - ./Caddyfile:/etc/caddy/Caddyfile
-  #     - ./volumes/caddy/data:/data
-  #     - ./volumes/caddy/config:/config
+  caddy:
+    image: caddy:2.4.3
+    restart: unless-stopped
+    ports:
+      - "443:443"
+    environment:
+      - /etc/localtime:/etc/localtime:ro
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./volumes/caddy/data:/data
+      - ./volumes/caddy/config:/config
 
   neo4j:
     image: neo4j:4.4.12-enterprise
@@ -36,19 +36,18 @@ services:
       - NEO4J_dbms_memory_heap_maxSize=2048
       - NEO4J_dbms_connector_bolt_enabled=true
 
-  # api-server:
-  #   image: koakh-neo4j-graphql-yoga3-starter:latest
-  #   image: koakh/koakh-neo4j-graphql-yoga3-starter:latest
-  #   domainname: kuartzo.com
-  #   hostname: api-server
-  #   container_name: server
-  #   restart: unless-stopped
-  #   ports:
-  #     - "5000:5000"
-  #   volumes:
-  #     - /etc/localtime:/etc/localtime:ro
-  #   environment:
-  #     - NEO_USER=neo4j
-  #     - NEO_PASSWORD=root
-  #     - NEO_URL=neo4j://neo4j:7687/neo4j
-  #     - NEO_GRAPHQL_JWT_SECRET=supersecret
+  api-server:
+    image: koakh/koakh-neo4j-graphql-yoga3-starter:latest
+    domainname: kuartzo.com
+    hostname: api-server
+    container_name: server
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      - NEO4J_USER=neo4j
+      - NEO4J_PASSWORD=neo4jsecret
+      - NEO4J_URL=neo4j://neo4j:7687/neo4j
+      - NEO4J_GRAPHQL_JWT_SECRET=supersecret

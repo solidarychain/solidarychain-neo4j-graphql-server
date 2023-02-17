@@ -1,10 +1,9 @@
 // delete all nodes and relationships
-MATCH (n) DETACH DELETE n;
+// MATCH (n) DETACH DELETE n;
 // index's
-// CALL db.index.fulltext.createNodeIndex("postIndex", ["Post"],["title", "content"])
-// CREATE CONSTRAINT constraint_blog_id ON (blog:Blog) ASSERT blog.id IS UNIQUE;
-// CREATE CONSTRAINT constraint_blog_name ON (blog:Blog) ASSERT blog.name IS UNIQUE;
-// CREATE CONSTRAINT constraint_user_id ON (user:User) ASSERT user.id IS UNIQUE;
-// CREATE CONSTRAINT constraint_user_email ON (user:User) ASSERT user.email IS UNIQUE;
-
 CREATE FULLTEXT INDEX businessNameIndex FOR (b:Business) ON EACH [b.name]
+// constraints
+CREATE CONSTRAINT constraint_business_id ON (business:Business) ASSERT business.businessId IS UNIQUE;
+CREATE CONSTRAINT constraint_category_id ON (category:Category) ASSERT category.categoryId IS UNIQUE;
+CREATE CONSTRAINT constraint_review_id ON (review:Review) ASSERT review.reviewId IS UNIQUE;
+CREATE CONSTRAINT constraint_user_name ON (user:User) ASSERT user.name IS UNIQUE;
