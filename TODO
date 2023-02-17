@@ -1,5 +1,5 @@
 Project:
-  ☐ @critical create github repo
+  ✔ create github repo @done(23-02-17 22:47)
   ✔ add more stuff to client.http @done(23-02-17 22:41)
     ✔ deleteBusinesses @done(23-02-17 22:41)
     ✔ updateBusinesses @done(23-02-17 22:41)
