@@ -3,14 +3,11 @@
   "configurations": [
     {
       "type": "node",
-      "request": "launch",
-      "name": "Debug TypeScript in Node.js",
-      "preLaunchTask": "npm: build",
-      "program": "${workspaceFolder}/src/index.ts",
-      "outFiles": ["${workspaceFolder}/build/**/*.js"],
-      "sourceMaps": true,
-      "smartStep": true,
-      "internalConsoleOptions": "openOnSessionStart"
+      "request": "attach",
+      "name": "Attach App with debugger",
+      "port": 4321,
+      "cwd": "${workspaceRoot}/src",
+      "restart": true
     }
   ]
 }

@@ -1,22 +1,27 @@
 Project:
-  ✔ @critical run Neo4jFullstackGraphQLApplicationsWithReactNodejsAndNeo4jBook/code/chapter7/api @done(23-02-16 22:21)
+  ☐ @critical create github repo
+  ☐ @critical add more stuff to client.http
+    ☐ deleteBusinesses
+    ☐ updateBusinesses
+  ✔ run Neo4jFullstackGraphQLApplicationsWithReactNodejsAndNeo4jBook/code/chapter7/api @done(23-02-16 22:21)
     @neo4j/graphql-plugin-auth
     /home/mario/Development/Neo4j/Neo4jFullstackGraphQLApplicationsWithReactNodejsAndNeo4jBook/code/chapter7/api/index.js
-  ☐ get fies from TypescriptNodeNeo4jGraphqlLibraryStarter
-    ☐ connect to neo4j
-    ☐ seeder
-    ☐ debugger
-    ☐ finish Caddy
-    ☐ finish Dockerfile
+  ✔ get fies from TypescriptNodeNeo4jGraphqlLibraryStarter @done(23-02-16 23:40)
+    ✔ connect to neo4j @done(23-02-16 22:48)
+    ✔ seeder @done(23-02-16 23:40)
+    ✔ debugger @done(23-02-16 22:48)
+    ✔ finish Caddy @done(23-02-16 23:40)
+    ✔ finish Dockerfile @done(23-02-16 23:40)
   ☐ custom operations
   ☐ minimal query, mutation, subscription
-  ☐ tooling
-    ☐ eslint
-    ☐ prettier
+  ✔ tooling @done(23-02-16 22:48)
+    ✔ eslint @done(23-02-16 22:48)
+    ✔ prettier @done(23-02-16 22:48)
   ☐ neo4j graphql lib
-    ☐ create INDEXs
-    ☐ The @computed directive has been deprecated and will be removed in version 4.0.0.
-    Please use the @customResolver directive instead. More information can be found at https://neo4j.com/docs/graphql-manual/current/guides/v4-migration/#_computed_renamed_to_customresolver.
-    ☐ seed database
+    ✔ create INDEXs (used `:play grandstack`) @done(23-02-16 22:49)
+    ☐ seed database with seeder.ts and @faker-js/faker
+    ☐ fix deprecated, follow neo4j gql lib migration to 4.0.0
+      The @computed directive has been deprecated and will be removed in version 4.0.0.
+      Please use the @customResolver directive instead. More information can be found at https://neo4j.com/docs/graphql-manual/current/guides/v4-migration/#_computed_renamed_to_customresolver.
   ☐ server
-    ☐ https
+    ☐ @low  https

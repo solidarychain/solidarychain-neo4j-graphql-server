@@ -57,6 +57,7 @@ export const startServer = async (): Promise<void> => {
     });
     const server = createServer(yoga);
     server.listen(HTTP_SERVER_PORT, () => {
+      debugger;
       debug(`server listening on http://localhost:${HTTP_SERVER_PORT}/graphql`);
     });
   });

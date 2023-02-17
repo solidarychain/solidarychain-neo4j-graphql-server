@@ -4,8 +4,8 @@ const { writeFileSync } = require('fs')
 
 async function main() {
   await build({
-    entryPoints: ['./src/index.ts'],
-    outfile: 'dist/index.js',
+    entryPoints: ['./src/main.ts'],
+    outfile: 'dist/main.js',
     format: 'cjs',
     minify: false,
     bundle: true,
