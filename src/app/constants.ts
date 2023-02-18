@@ -3,7 +3,7 @@ import { UserRole } from "../types";
 interface IAppConstants {
   // [key: string]: string;
   // regEx: { [key: string]: RegExp; };
-  // authentication: { [key: string]: Array<UserRole> };
+  authentication: { [key: string]: Array<UserRole> };
 }
 
 export const appConstants: IAppConstants = {

@@ -1,26 +1,10 @@
 Project:
-  ✔ create github repo @done(23-02-17 22:47)
-  ✔ add more stuff to client.http @done(23-02-17 22:41)
-    ✔ deleteBusinesses @done(23-02-17 22:41)
-    ✔ updateBusinesses @done(23-02-17 22:41)
-  ✔ create INDEXs and CONSTRAINTs to init.cypher @done(23-02-17 22:41)
-  ✔ run Neo4jFullstackGraphQLApplicationsWithReactNodejsAndNeo4jBook/code/chapter7/api @done(23-02-16 22:21)
-    @neo4j/graphql-plugin-auth
-    /home/mario/Development/Neo4j/Neo4jFullstackGraphQLApplicationsWithReactNodejsAndNeo4jBook/code/chapter7/api/index.js
-  ✔ get fies from TypescriptNodeNeo4jGraphqlLibraryStarter @done(23-02-16 23:40)
-    ✔ connect to neo4j @done(23-02-16 22:48)
-    ✔ seeder @done(23-02-16 23:40)
-    ✔ debugger @done(23-02-16 22:48)
-    ✔ finish Caddy @done(23-02-16 23:40)
-    ✔ finish Dockerfile @done(23-02-16 23:40)
-    ✔ finish local docker stack @done(23-02-17 22:14)
-  ✔ tooling @done(23-02-16 22:48)
-    ✔ eslint @done(23-02-16 22:48)
-    ✔ prettier @done(23-02-16 22:48)
-  ☐ neo4j graphql lib
-    ☐ seed database with seeder.ts and @faker-js/faker
-    ☐ fix deprecated, follow neo4j gql lib migration to 4.0.0
-      The @computed directive has been deprecated and will be removed in version 4.0.0.
-      Please use the @customResolver directive instead. More information can be found at https://neo4j.com/docs/graphql-manual/current/guides/v4-migration/#_computed_renamed_to_customresolver.
-  ☐ server
-    ☐ @low  https
+  Models:
+    ☐ all entities have the same name, address, country, zipcode, fiscalNumber etc
+      all others must extend this object interface
+    ☐ implement tags
+  Schema:
+    ☐ hide stuff like aggregate and other non used things
+      ☐ ex createGenericBalances, deleteGenericBalances, updateGenericBalances, 
+  Seeder:
+    ☐ create seed data

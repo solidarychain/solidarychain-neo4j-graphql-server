@@ -4,7 +4,7 @@
 
 # declare common vars
 DOCKER_REGISTRY_URL="hub.dockerhub.com"
-DOMAIN_PROJECT_NAME="koakh/koakh-neo4j-graphql-yoga3-starter"
+DOMAIN_PROJECT_NAME="solidary-chain/solidary-chain-graph-ql-server"
 
 if [ -z "${1}" ] || [ -z "${2}" ]; then
   echo "missing require paramameters 'docker-image-name' and 'docker-image-version'"

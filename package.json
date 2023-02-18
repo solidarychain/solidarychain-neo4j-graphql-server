@@ -1,5 +1,5 @@
 {
-  "name": "koakh-neo4j-graphql-yoga3-starter",
+  "name": "solidary-chain-graph-ql-server",
   "private": true,
   "version": "1.0.0",
   "scripts": {
@@ -9,9 +9,9 @@
     "check": "tsc --pretty --noEmit",
     "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write",
     "seed": "ts-node -r tsconfig-paths/register --project ./src/tsconfig.json ./src/seeder.ts",
-    "docker:build": "docker build . -t koakh/koakh-neo4j-graphql-yoga3-starter:latest --network host",
-    "docker:run": "docker run -p 5000:5000 -d koakh/koakh-neo4j-graphql-yoga3-starter:latest",
-    "docker:run:debug": "docker run -it koakh/koakh-neo4j-graphql-yoga3-starter:latest /bin/sh"
+    "docker:build": "docker build . -t solidary-chain/solidary-chain-graph-ql-server:latest --network host",
+    "docker:run": "docker run -p 5000:5000 -d solidary-chain/solidary-chain-graph-ql-server:latest",
+    "docker:run:debug": "docker run -it solidary-chain/solidary-chain-graph-ql-server:latest /bin/sh"
   },
   "dependencies": {
     "@neo4j/graphql": "^3.16.1",

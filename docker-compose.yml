@@ -37,7 +37,7 @@ services:
       - NEO4J_dbms_connector_bolt_enabled=true
 
   api-server:
-    image: koakh/koakh-neo4j-graphql-yoga3-starter:latest
+    image: solidary-chain/solidary-chain-graph-ql-server:latest
     domainname: kuartzo.com
     hostname: api-server
     container_name: server
