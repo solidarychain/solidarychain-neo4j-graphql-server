@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "scripts": {
     "start": "ts-node src/main.ts",
-    "debug": "ts-node-dev --exit-child --files --transpile-only --respawn --inspect=4321 --project tsconfig.json -- src/main.ts",
+    "debug": "DEBUG='@neo4j/graphql:*' ts-node-dev --exit-child --files --transpile-only --respawn --inspect=4321 --project tsconfig.json -- src/main.ts",
     "build": "node ./build.js",
     "check": "tsc --pretty --noEmit",
     "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write",

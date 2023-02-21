@@ -17,7 +17,8 @@ export const typeDefs = /* GraphQL */ `
     ambassadors: [Citizen!]! @relationship(type: "AMBASSADOR_OF", direction: IN)
     # model fields
     image: String
-    owner: Entity! @relationship(type: "OWNS", direction: IN)
+# TODO: found problematic fields
+# owner: Entity! @relationship(type: "OWNS", direction: IN)
   }
 
   extend type Asset
