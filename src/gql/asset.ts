@@ -3,7 +3,7 @@ import { appConstants } from "../app";
 export const typeDefs = /* GraphQL */ `
   type Asset {
     # base
-    id: ID!
+    id: ID! @id
     createdBy: Citizen! @relationship(type: "CREATE", direction: IN)
     createdAt: DateTime! @timestamp(operations: [CREATE])
     updatedAt: DateTime! @timestamp(operations: [UPDATE])
@@ -12,14 +12,12 @@ export const typeDefs = /* GraphQL */ `
     # model fields
     name: String!
     description: String
-    assetType: String!
+    assetType: AssetType!
     geoLocation: Point
-    ambassadors: [Citizen!]
+    ambassadors: [Citizen!]! @relationship(type: "AMBASSADOR_OF", direction: IN)
     # model fields
     image: String
-    # relationship out
-# TODO:
-# entity: Entity @relationship(type: "BELONGS_TO", direction: IN)
+    owner: Entity! @relationship(type: "OWNS", direction: IN)
   }
 
   extend type Asset
@@ -29,4 +27,11 @@ export const typeDefs = /* GraphQL */ `
         { operations: [CREATE, UPDATE, DELETE], roles: [${appConstants.authentication.defaultAdminRole}] }
       ]
     )
+
+  enum AssetType {
+    PHYSICAL_ASSET
+    DIGITAL_ASSET
+    DIGITAL_VOUCHER
+    PHYSICAL_VOUCHER
+  }
 `;

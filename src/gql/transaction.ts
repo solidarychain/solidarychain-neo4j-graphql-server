@@ -3,22 +3,19 @@ import { appConstants } from "../app";
 export const typeDefs = /* GraphQL */ `
   type Transaction {
     # base
-    id: ID!
+    id: ID! @id
     createdBy: Citizen! @relationship(type: "CREATE", direction: IN)
     createdAt: DateTime! @timestamp(operations: [CREATE])
     updatedAt: DateTime! @timestamp(operations: [UPDATE])
     metaData: JSONObject
     metaDataInternal: JSONObject
-    # TODO: enum
-    transactionType: String!
-    # TODO: enum
-    resourceType: String!
-    quantity: Float
-    # TODO: currency type
-    currency: String
+    # model fields
+    transactionType: TransactionType!
+    resourceType: ResourceType!
+    currency: CurrencyType!
+    quantity: Float!
     input: Entity!
     output: Entity!
-    # TODO: spatial
     geoLocation: Point
   }
 
@@ -29,4 +26,25 @@ export const typeDefs = /* GraphQL */ `
         { operations: [CREATE, UPDATE, DELETE], roles: [${appConstants.authentication.defaultAdminRole}] }
       ]
     )
+
+    enum TransactionType {
+    TRANSFER_FUNDS
+    TRANSFER_VOLUNTEERING_HOURS
+    TRANSFER_GOODS
+    TRANSFER_ASSET
+  }
+
+  enum ResourceType {
+    FUNDS
+    VOLUNTEERING_HOURS
+    GENERIC_GOODS
+    PHYSICAL_ASSET
+    DIGITAL_ASSET
+    PHYSICAL_VOUCHER
+    DIGITAL_VOUCHER
+  }
+
+  enum CurrencyType {
+    EUR
+  }
 `;

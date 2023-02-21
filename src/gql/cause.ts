@@ -3,7 +3,7 @@ import { appConstants } from "../app";
 export const typeDefs = /* GraphQL */ `
   type Cause implements Entity {
     # base
-    id: ID!
+    id: ID! @id
     createdBy: Citizen! @relationship(type: "CREATE", direction: IN)
     createdAt: DateTime! @timestamp(operations: [CREATE])
     updatedAt: DateTime! @timestamp(operations: [UPDATE])
@@ -14,15 +14,15 @@ export const typeDefs = /* GraphQL */ `
     email: String
     geoLocation: Point
     fundsBalance: GenericBalance!
-    volunteeringHoursBalance: GenericBalance!
-    goodsStock: [Good!]!
+    volunteerTimeHoursBalance: GenericBalance!
+    assets: [Asset!]!
+    goods: [Good!]!
+    ambassadors: [Citizen!]!
+    transactions: [Transaction!]!
     # model fields
     image: String
     startDate: Date!
     endDate: Date!
-    # relationship out
-# TODO:
-# entity: Entity @relationship(type: "BELONGS_TO", direction: IN)
   }
 
   extend type Cause

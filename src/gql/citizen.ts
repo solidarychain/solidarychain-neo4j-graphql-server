@@ -3,7 +3,7 @@ import { appConstants } from "../app";
 export const typeDefs = /* GraphQL */ `
   type Citizen implements Entity {
     # base
-    id: ID!
+    id: ID! @id
     createdBy: Citizen! @relationship(type: "CREATE", direction: IN)
     createdAt: DateTime! @timestamp(operations: [CREATE])
     updatedAt: DateTime! @timestamp(operations: [UPDATE])
@@ -14,21 +14,24 @@ export const typeDefs = /* GraphQL */ `
     email: String
     geoLocation: Point
     fundsBalance: GenericBalance!
-    volunteeringHoursBalance: GenericBalance!
-    goodsStock: [Good!]!
+    volunteerTimeHoursBalance: GenericBalance!
+    assets: [Asset!]!
+    goods: [Good!]!
+    ambassadors: [Citizen!]!
+    transactions: [Transaction!]!
     # model fields
-    # TODO: add citizen minimal fields order by the same order of identity provider
     # auth
     roles: [String!]
-    # relationship out
-# TODO:
-# entity: Entity @relationship(type: "BELONGS_TO", direction: IN)
-    # relationship out
-    organizations: [Organization!]! @relationship(type: "CREATE", direction: OUT)
-    citizens: [Citizen!]! @relationship(type: "CREATE", direction: OUT)
-    causes: [Cause!]! @relationship(type: "CREATE", direction: OUT)
-    asset: [Asset!]! @relationship(type: "CREATE", direction: OUT)
-    goods: [Good!]! @relationship(type: "CREATE", direction: OUT)
+    # relationship out: person create...
+    # organization: [Organization!]! @relationship(type: "CREATE", direction: OUT)
+    # citizen: [Citizen!]! @relationship(type: "CREATE", direction: OUT)
+    # cause: [Cause!]! @relationship(type: "CREATE", direction: OUT)
+    # asset: [Asset!]! @relationship(type: "CREATE", direction: OUT)
+    # transactions: [Transaction!]! @relationship(type: "CREATE", direction: OUT)
+    # relationship out: person ambassador of
+    # organizations: [Organization!]! @relationship(type: "AMBASSADOR_OF", direction: OUT)
+    # causes: [Cause!]! @relationship(type: "AMBASSADOR_OF", direction: OUT)
+    # assets: [Asset!]! @relationship(type: "AMBASSADOR_OF", direction: OUT)
   }
 
   extend type Citizen

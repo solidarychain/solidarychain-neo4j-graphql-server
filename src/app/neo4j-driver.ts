@@ -19,6 +19,7 @@ export const neo4jConnect = async() => {
   debug('Connected');
 }
 
+// used in seeder to close connection
 export const neo4jDisconnect = () => {
   return driver.close();
 }

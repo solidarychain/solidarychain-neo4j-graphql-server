@@ -3,7 +3,7 @@ import { appConstants } from "../app";
 export const typeDefs = /* GraphQL */ `
   type Good {
     # base
-    id: ID!
+    id: ID! @id
     createdBy: Citizen! @relationship(type: "CREATE", direction: IN)
     createdAt: DateTime! @timestamp(operations: [CREATE])
     updatedAt: DateTime! @timestamp(operations: [UPDATE])
@@ -15,6 +15,7 @@ export const typeDefs = /* GraphQL */ `
     code: String!
     barCode: String
     balance: GenericBalance!
+    owner: Entity! @relationship(type: "BELONGS_TO", direction: IN)
   }
 
   extend type Good
