@@ -16,6 +16,10 @@ export const typeDefs = /* GraphQL */ `
     quantity: Float!
     input: Entity!
     output: Entity!
+    # TODO: create relation
+    # assets: [Asset!]
+    # goods: [Good!]
+    # TODO: add to arrows all the type of transactions possible
     geoLocation: Point
   }
 

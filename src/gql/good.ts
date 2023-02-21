@@ -15,8 +15,9 @@ export const typeDefs = /* GraphQL */ `
     code: String!
     barCode: String
     balance: GenericBalance!
-# TODO: found problematic fields
-# owner: Entity! @relationship(type: "HAS", direction: IN)
+    # TODO: found problematic fields, is in the RELATION
+    # this is not required, entity ha a array of it's assets, and googs
+    # owner: Entity! @relationship(type: "OWNS", direction: IN)
   }
 
   extend type Good
