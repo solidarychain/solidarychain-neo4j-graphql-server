@@ -3,8 +3,9 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "start": "ts-node src/main.ts",
-    "debug": "DEBUG='@neo4j/graphql:*' ts-node-dev --exit-child --files --transpile-only --respawn --inspect=4321 --project tsconfig.json -- src/main.ts",
+    "start": "DEBUG='@neo4j/graphql:execute,Server:*,Neo4j:*' nodemon --watch '.--inspect /src/**/*.ts' --exec ./node_modules/.bin/ts-node -r tsconfig-paths/register --project ./src/tsconfig.json ./src/index.ts",
+    "dev": "DEBUG='@neo4j/graphql:*,Application:*,Server:*,Neo4j:*,Seeder:*' nodemon --watch '.--inspect /src/**/*.ts' --exec ts-node -r tsconfig-paths/register --project ./tsconfig.json ./src/main.ts",
+    "debug": "DEBUG='@neo4j/graphql:*,Application:*,Server:*,Neo4j:*,Seeder:*' ts-node-dev --exit-child --files --transpile-only --respawn --inspect=4321 --project tsconfig.json -- src/main.ts",
     "build": "node ./build.js",
     "check": "tsc --pretty --noEmit",
     "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write",
@@ -21,7 +22,8 @@
     "dotenv": "^16.0.3",
     "graphql": "16.6.0",
     "graphql-yoga": "3.6.0",
-    "neo4j-driver": "^5.5.0"
+    "neo4j-driver": "^5.5.0",
+    "tslog": "^4.7.4"
   },
   "devDependencies": {
     "@types/node": "^18.13.0",
@@ -32,6 +34,7 @@
     "prettier": "^2.8.4",
     "ts-node": "10.9.1",
     "ts-node-dev": "^2.0.0",
+    "tsconfig-paths": "^4.1.2",
     "typescript": "4.9.5"
   }
 }

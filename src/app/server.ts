@@ -27,8 +27,10 @@ const neoSchema = new Neo4jGraphQL({
     })
   },
   config: {
-    // TODO: add env var
-    enableDebug: false
+    // warning DON't enable this this
+    // this is what disable the debug login for all debug logs, 
+    // if true show only neo4j debugs but disable all others, better to don't use it ever
+    // enableDebug: true
   }
 });
 
@@ -38,7 +40,7 @@ export const ogm = new OGM({
   driver
 });
 
-export const startServer = async (): Promise<void> => {
+export const startServer = async () => {
   // available when handling requests, needs to be provided by the implementor
   type ServerContext = {
     ogm: OGM;

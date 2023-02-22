@@ -17,8 +17,8 @@ export const typeDefs = /* GraphQL */ `
     input: Entity!
     output: Entity!
     # TODO: create relation
-    # assets: [Asset!]
-    # goods: [Good!]
+    assets: [Asset!]
+    goods: [Good!]
     # TODO: add to arrows all the type of transactions possible
     geoLocation: Point
   }
@@ -36,19 +36,18 @@ export const typeDefs = /* GraphQL */ `
     TRANSFER_VOLUNTEERING_HOURS
     TRANSFER_GOODS
     TRANSFER_ASSET
+    TRANSFER_VOUCHER
   }
 
   enum ResourceType {
     FUNDS
     VOLUNTEERING_HOURS
     GENERIC_GOODS
-    PHYSICAL_ASSET
-    DIGITAL_ASSET
-    PHYSICAL_VOUCHER
-    DIGITAL_VOUCHER
+    ASSET
   }
 
   enum CurrencyType {
     EUR
+    USD
   }
 `;

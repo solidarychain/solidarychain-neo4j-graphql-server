@@ -1,4 +1,4 @@
-import neo4j from 'neo4j-driver';
+import * as neo4j from 'neo4j-driver';
 import { Neo4jEncryption } from '../types';
 import { NEO4J_ENCRYPTION, NEO4J_PASSWORD, NEO4J_URL, NEO4J_USER } from './config';
 import createDebugger from './debugger';
@@ -12,7 +12,7 @@ export const driver = neo4j.driver(
   { encrypted: NEO4J_ENCRYPTION === Neo4jEncryption.ENCRYPTION_ON }
 );
 
-export const neo4jConnect = async() => {
+export async function neo4jConnect() {
   debug('Connecting');
   const serverInfo = await driver.getServerInfo();
   debug(`serverInfo:`, JSON.stringify(serverInfo, undefined, 0));
