@@ -14,17 +14,19 @@
     "docker:run:debug": "docker run -it solidary-chain/solidary-chain-graph-ql-server:latest /bin/sh"
   },
   "dependencies": {
+    "@envelop/core": "^3.0.6",
     "@neo4j/graphql": "^3.16.1",
     "@neo4j/graphql-ogm": "^3.16.1",
     "@neo4j/graphql-plugin-auth": "^2.1.0",
     "debug": "^4.3.4",
     "dotenv": "^16.0.3",
-    "graphql": "16.6.0",
-    "graphql-yoga": "3.6.0",
+    "graphql": "^16.6.0",
+    "graphql-yoga": "^3.6.0",
     "neo4j-driver": "^5.5.0",
-    "tslog": "^4.7.4"
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
+    "@faker-js/faker": "^7.6.0",
     "@types/node": "^18.13.0",
     "esbuild": "^0.17.8",
     "eslint": "^8.34.0",
