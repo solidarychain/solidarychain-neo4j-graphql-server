@@ -1,6 +1,16 @@
 import { appConstants } from "../app";
 
 export const typeDefs = /* GraphQL */ `
+  type AssetItems @exclude {
+    asset: Asset! @relationship(type: "ASSET_LINKED_TO", direction: OUT)
+    quantity: Int!
+  }
+
+  type GoodItems @exclude {
+    good: Good! @relationship(type: "GOOD_LINKED_TO", direction: OUT)
+    quantity: Int!
+  }
+
   type Transaction {
     # base
     id: ID! @id
@@ -16,11 +26,9 @@ export const typeDefs = /* GraphQL */ `
     quantity: Float!
     input: Entity!
     output: Entity!
-    # TODO: create relation
-    assets: [Asset!]
-    goods: [Good!]
-    # TODO: add to arrows all the type of transactions possible
     geoLocation: Point
+    assets: [AssetItems!]
+    goods: [GoodItems!]
   }
 
   extend type Transaction

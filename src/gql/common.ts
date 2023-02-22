@@ -5,7 +5,7 @@ export const typeDefs = /* GraphQL */ `
 
   scalar JSONObject
 
-  type GenericBalance {
+  type GenericBalance @exclude {
     debit: Float!
     credit: Float!
     balance: Float!
