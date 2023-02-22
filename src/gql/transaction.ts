@@ -2,12 +2,12 @@ import { appConstants } from "../app";
 
 export const typeDefs = /* GraphQL */ `
   type AssetItems @exclude {
-    asset: Asset! @relationship(type: "ASSET_LINKED_TO", direction: OUT)
+    asset: Asset!
     quantity: Int!
   }
 
   type GoodItems @exclude {
-    good: Good! @relationship(type: "GOOD_LINKED_TO", direction: OUT)
+    good: Good!
     quantity: Int!
   }
 

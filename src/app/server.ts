@@ -4,7 +4,7 @@ import { Neo4jGraphQLAuthJWKSPlugin } from '@neo4j/graphql-plugin-auth';
 import { createYoga } from 'graphql-yoga';
 import { createServer } from 'http';
 import { Driver } from 'neo4j-driver';
-import { AUTH_JWKS_ENDPOINT, driver, HTTP_SERVER_PORT } from '.';
+import { NEO4J_GQL_AUTH_JWKS_ENDPOINT, ENABLE_DEBUG, driver, HTTP_SERVER_PORT, NEO4J_GQL_ROLES_PATH } from '.';
 import { typeDefs } from '../gql';
 import createDebugger from './debugger';
 
@@ -18,19 +18,19 @@ const neoSchema = new Neo4jGraphQL({
   plugins: {
     subscriptions: new Neo4jGraphQLSubscriptionsSingleInstancePlugin(),
     auth: new Neo4jGraphQLAuthJWKSPlugin({
-      jwksEndpoint: AUTH_JWKS_ENDPOINT,
+      jwksEndpoint: NEO4J_GQL_AUTH_JWKS_ENDPOINT,
       // Use the Neo4jGraphQL config option rolesPath to specify a object path for JWT roles otherwise defaults to jwt.roles
       // https://neo4j.com/docs/graphql-manual/current/auth/authorization/roles/
       // check consent app
-      // TODO: add env var
-      rolesPath: 'scope.profile.roles'
+      rolesPath: NEO4J_GQL_ROLES_PATH
     })
   },
   config: {
     // warning DON't enable this this
     // this is what disable the debug login for all debug logs, 
     // if true show only neo4j debugs but disable all others, better to don't use it ever
-    // enableDebug: true
+    // use undefined to show log, and false to hide
+    enableDebug: ENABLE_DEBUG
   }
 });
 
